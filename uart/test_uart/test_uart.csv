@@ -1,0 +1,21 @@
+# system info test_uart on 2020.02.10.14:34:55
+system_info:
+name,value
+DEVICE,EP4CE6F17C8
+DEVICE_FAMILY,Cyclone IV E
+GENERATION_ID,1581316492
+#
+#
+# Files generated for test_uart on 2020.02.10.14:34:55
+files:
+filepath,kind,attributes,module,is_top
+simulation/test_uart.vhd,VHDL,,test_uart,true
+simulation/submodules/altera_reset_controller.v,VERILOG,,altera_reset_controller,false
+simulation/submodules/altera_reset_synchronizer.v,VERILOG,,altera_reset_controller,false
+simulation/submodules/altera_reset_controller.sdc,SDC,,altera_reset_controller,false
+#
+# Map from instance-path to kind of module
+instances:
+instancePath,module
+test_uart.rs232_0,test_uart_rs232_0
+test_uart.rst_controller,altera_reset_controller

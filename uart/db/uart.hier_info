@@ -1,0 +1,64 @@
+|uart
+CLOckIn => fd:f1.ClockIn
+TX <= TX~reg0.DB_MAX_OUTPUT_PORT_TYPE
+RESet => process_0.IN1
+text1 << fd:f1.FdOUT
+
+
+|uart|fd:f1
+ClockIn => temp1.CLK
+ClockIn => temp.CLK
+ClockIn => j[0].CLK
+ClockIn => j[1].CLK
+ClockIn => j[2].CLK
+ClockIn => j[3].CLK
+ClockIn => j[4].CLK
+ClockIn => j[5].CLK
+ClockIn => j[6].CLK
+ClockIn => j[7].CLK
+ClockIn => j[8].CLK
+ClockIn => j[9].CLK
+ClockIn => j[10].CLK
+ClockIn => j[11].CLK
+ClockIn => j[12].CLK
+ClockIn => j[13].CLK
+ClockIn => j[14].CLK
+ClockIn => j[15].CLK
+ClockIn => j[16].CLK
+ClockIn => j[17].CLK
+ClockIn => j[18].CLK
+ClockIn => j[19].CLK
+ClockIn => j[20].CLK
+ClockIn => j[21].CLK
+ClockIn => j[22].CLK
+ClockIn => j[23].CLK
+ClockIn => j[24].CLK
+ClockIn => i[0].CLK
+ClockIn => i[1].CLK
+ClockIn => i[2].CLK
+ClockIn => i[3].CLK
+ClockIn => i[4].CLK
+ClockIn => i[5].CLK
+ClockIn => i[6].CLK
+ClockIn => i[7].CLK
+ClockIn => i[8].CLK
+ClockIn => i[9].CLK
+ClockIn => i[10].CLK
+ClockIn => i[11].CLK
+ClockIn => i[12].CLK
+ClockIn => i[13].CLK
+ClockIn => i[14].CLK
+ClockIn => i[15].CLK
+ClockIn => i[16].CLK
+ClockIn => i[17].CLK
+ClockIn => i[18].CLK
+ClockIn => i[19].CLK
+ClockIn => i[20].CLK
+ClockIn => i[21].CLK
+ClockIn => i[22].CLK
+ClockIn => i[23].CLK
+ClockIn => i[24].CLK
+FdOUT <= temp.DB_MAX_OUTPUT_PORT_TYPE
+FdOUT1 <= temp1.DB_MAX_OUTPUT_PORT_TYPE
+
+

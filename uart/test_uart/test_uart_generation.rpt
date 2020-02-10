@@ -1,0 +1,73 @@
+Info: Starting: Create simulation model
+Info: qsys-generate C:\Users\pan39\Desktop\fpga\uart\test_uart.qsys --simulation=VHDL --allow-mixed-language-simulation --output-directory=C:\Users\pan39\Desktop\fpga\uart\test_uart\simulation --family="Cyclone IV E" --part=EP4CE6F17C8
+Progress: Loading uart/test_uart.qsys
+Progress: Reading input file
+Progress: Adding clk_0 [clock_source 17.1]
+Progress: Parameterizing module clk_0
+Progress: Adding rs232_0 [altera_up_avalon_rs232 17.1]
+Progress: Parameterizing module rs232_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: test_uart: Generating test_uart "test_uart" for SIM_VHDL
+Info: rs232_0: Starting Generation of RS232 UART
+Warning: rs232_0: No files generated for fileset SIM_VHDL
+Info: rs232_0: "test_uart" instantiated altera_up_avalon_rs232 "rs232_0"
+Info: rst_controller: "test_uart" instantiated altera_reset_controller "rst_controller"
+Info: test_uart: Done "test_uart" with 3 modules, 4 files
+Info: qsys-generate succeeded.
+Info: Finished: Create simulation model
+Info: Starting: Create Modelsim Project.
+Info: sim-script-gen --spd=C:\Users\pan39\Desktop\fpga\uart\test_uart\test_uart.spd --output-directory=C:/Users/pan39/Desktop/fpga/uart/test_uart/simulation/ --use-relative-paths=true
+Info: Doing: ip-make-simscript --spd=C:\Users\pan39\Desktop\fpga\uart\test_uart\test_uart.spd --output-directory=C:/Users/pan39/Desktop/fpga/uart/test_uart/simulation/ --use-relative-paths=true
+Info: Generating the following file(s) for MODELSIM simulator in C:/Users/pan39/Desktop/fpga/uart/test_uart/simulation/ directory:
+Info: 	mentor/msim_setup.tcl
+Info: Skipping VCS script generation since VHDL file $QUARTUS_INSTALL_DIR/eda/sim_lib/altera_syn_attributes.vhd is required for simulation
+Info: Generating the following file(s) for VCSMX simulator in C:/Users/pan39/Desktop/fpga/uart/test_uart/simulation/ directory:
+Info: 	synopsys/vcsmx/synopsys_sim.setup
+Info: 	synopsys/vcsmx/vcsmx_setup.sh
+Info: Generating the following file(s) for NCSIM simulator in C:/Users/pan39/Desktop/fpga/uart/test_uart/simulation/ directory:
+Info: 	cadence/cds.lib
+Info: 	cadence/hdl.var
+Info: 	cadence/ncsim_setup.sh
+Info: 	1 .cds.lib files in cadence/cds_libs/ directory
+Info: Generating the following file(s) for RIVIERA simulator in C:/Users/pan39/Desktop/fpga/uart/test_uart/simulation/ directory:
+Info: 	aldec/rivierapro_setup.tcl
+Info: For information on how to simulate your IP, see the explanatory comments in the simulator-specific subdirectories under C:/Users/pan39/Desktop/fpga/uart/test_uart/simulation/.
+Info: Regenerate these scripts whenever you make any change to any Quartus-generated IP in your project.
+Info: Finished: Create Modelsim Project.
+Info: Starting: Create block symbol file (.bsf)
+Info: qsys-generate C:\Users\pan39\Desktop\fpga\uart\test_uart.qsys --block-symbol-file --output-directory=C:\Users\pan39\Desktop\fpga\uart\test_uart --family="Cyclone IV E" --part=EP4CE6F17C8
+Progress: Loading uart/test_uart.qsys
+Progress: Reading input file
+Progress: Adding clk_0 [clock_source 17.1]
+Progress: Parameterizing module clk_0
+Progress: Adding rs232_0 [altera_up_avalon_rs232 17.1]
+Progress: Parameterizing module rs232_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: qsys-generate succeeded.
+Info: Finished: Create block symbol file (.bsf)
+Info: 
+Info: Starting: Create HDL design files for synthesis
+Info: qsys-generate C:\Users\pan39\Desktop\fpga\uart\test_uart.qsys --synthesis=VHDL --output-directory=C:\Users\pan39\Desktop\fpga\uart\test_uart\synthesis --family="Cyclone IV E" --part=EP4CE6F17C8
+Progress: Loading uart/test_uart.qsys
+Progress: Reading input file
+Progress: Adding clk_0 [clock_source 17.1]
+Progress: Parameterizing module clk_0
+Progress: Adding rs232_0 [altera_up_avalon_rs232 17.1]
+Progress: Parameterizing module rs232_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: test_uart: Generating test_uart "test_uart" for QUARTUS_SYNTH
+Info: rs232_0: Starting Generation of RS232 UART
+Info: rs232_0: "test_uart" instantiated altera_up_avalon_rs232 "rs232_0"
+Info: rst_controller: "test_uart" instantiated altera_reset_controller "rst_controller"
+Info: test_uart: Done "test_uart" with 3 modules, 9 files
+Info: qsys-generate succeeded.
+Info: Finished: Create HDL design files for synthesis

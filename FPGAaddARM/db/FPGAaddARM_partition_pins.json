@@ -1,0 +1,21 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "LOUT",
+					"strict" : false
+				},
+				{
+					"name" : "CIn",
+					"strict" : false
+				},
+				{
+					"name" : "ClockIn",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

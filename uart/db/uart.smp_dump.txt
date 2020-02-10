@@ -1,0 +1,7 @@
+
+State Machine - |UART|State
+Name State.TXE State.TXING State.TXR State.IDLE 
+State.IDLE 0 0 0 0 
+State.TXR 0 0 1 1 
+State.TXING 0 1 0 1 
+State.TXE 1 0 0 1 

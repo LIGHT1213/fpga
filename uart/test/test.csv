@@ -1,0 +1,17 @@
+# system info test on 2020.02.10.14:28:21
+system_info:
+name,value
+DEVICE,EP4CE6F17C8
+DEVICE_FAMILY,Cyclone IV E
+GENERATION_ID,1581316099
+#
+#
+# Files generated for test on 2020.02.10.14:28:21
+files:
+filepath,kind,attributes,module,is_top
+simulation/test.vhd,VHDL,,test,true
+#
+# Map from instance-path to kind of module
+instances:
+instancePath,module
+test.rs232_0,test_rs232_0

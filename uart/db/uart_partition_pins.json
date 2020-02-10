@@ -1,0 +1,25 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "TX",
+					"strict" : false
+				},
+				{
+					"name" : "text1",
+					"strict" : false
+				},
+				{
+					"name" : "RESet",
+					"strict" : false
+				},
+				{
+					"name" : "CLOckIn",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

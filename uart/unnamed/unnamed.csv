@@ -1,0 +1,17 @@
+# system info unnamed on 2020.02.10.14:26:47
+system_info:
+name,value
+DEVICE,EP4CE6F17C8
+DEVICE_FAMILY,Cyclone IV E
+GENERATION_ID,1581316004
+#
+#
+# Files generated for unnamed on 2020.02.10.14:26:47
+files:
+filepath,kind,attributes,module,is_top
+simulation/unnamed.vhd,VHDL,,unnamed,true
+#
+# Map from instance-path to kind of module
+instances:
+instancePath,module
+unnamed.rs232_0,unnamed_rs232_0
