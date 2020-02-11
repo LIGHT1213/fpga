@@ -11,8 +11,8 @@ FdOUT1 :out std_logic
 end;
 
 architecture flow of fd is
-signal temp :std_logic;
-signal temp1 :std_logic;
+signal temp :std_logic:='1';
+signal temp1 :std_logic:='1';
 begin 
 process(ClockIn)
 variable i :integer range 0 to 25000000;
@@ -20,12 +20,12 @@ variable j :integer range 0 to 25000000;
 begin
 if(ClockIn'event and ClockIn='1') then
 i:=i+1;
-if(i=217) then
+if(i=12500) then
 temp<= not temp;
 i:=0;
 end if;
 j:=j+1;
-if(j=5208) then
+if(j=300000) then
 temp1<= not temp1;
 j:=0;
 end if;

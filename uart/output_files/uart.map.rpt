@@ -1,5 +1,5 @@
 Analysis & Synthesis report for uart
-Mon Feb 10 22:25:55 2020
+Tue Feb 11 16:30:37 2020
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -13,13 +13,20 @@ Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. State Machine - |UART|State
-  9. General Register Statistics
- 10. Inverted Register Statistics
- 11. Multiplexer Restructuring Statistics (Restructuring Performed)
- 12. Post-Synthesis Netlist Statistics for Top Partition
- 13. Elapsed Time Per Partition
- 14. Analysis & Synthesis Messages
+  8. State Machine - |UART|UART_tx:t1|TXState
+  9. State Machine - |UART|UART_rx:r1|RXState
+ 10. Registers Removed During Synthesis
+ 11. General Register Statistics
+ 12. Inverted Register Statistics
+ 13. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 14. Port Connectivity Checks: "fd:f1"
+ 15. Port Connectivity Checks: "UART_tx:t1|fd:f1"
+ 16. Port Connectivity Checks: "UART_tx:t1"
+ 17. Port Connectivity Checks: "UART_rx:r1|fd:f1"
+ 18. Port Connectivity Checks: "UART_rx:r1"
+ 19. Post-Synthesis Netlist Statistics for Top Partition
+ 20. Elapsed Time Per Partition
+ 21. Analysis & Synthesis Messages
 
 
 
@@ -45,16 +52,16 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Feb 10 22:25:54 2020       ;
+; Analysis & Synthesis Status        ; Successful - Tue Feb 11 16:30:37 2020       ;
 ; Quartus Prime Version              ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                      ; uart                                        ;
 ; Top-level Entity Name              ; UART                                        ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 175                                         ;
-;     Total combinational functions  ; 175                                         ;
-;     Dedicated logic registers      ; 90                                          ;
-; Total registers                    ; 90                                          ;
-; Total pins                         ; 4                                           ;
+; Total logic elements               ; 277                                         ;
+;     Total combinational functions  ; 272                                         ;
+;     Dedicated logic registers      ; 115                                         ;
+; Total registers                    ; 115                                         ;
+; Total pins                         ; 12                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -166,70 +173,123 @@ refer to the applicable agreement for further details.
 +----------------------------+-------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                     ;
-+----------------------------------+-----------------+-----------------+-------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path              ; Library ;
-+----------------------------------+-----------------+-----------------+-------------------------------------------+---------+
-; fd.vhd                           ; yes             ; User VHDL File  ; C:/Users/pan39/Desktop/fpga/uart/fd.vhd   ;         ;
-; uart.vhd                         ; yes             ; User VHDL File  ; C:/Users/pan39/Desktop/fpga/uart/uart.vhd ;         ;
-+----------------------------------+-----------------+-----------------+-------------------------------------------+---------+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                        ;
++----------------------------------+-----------------+-----------------+----------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                 ; Library ;
++----------------------------------+-----------------+-----------------+----------------------------------------------+---------+
+; fd.vhd                           ; yes             ; User VHDL File  ; C:/Users/pan39/Desktop/fpga/uart/fd.vhd      ;         ;
+; uart.vhd                         ; yes             ; User VHDL File  ; C:/Users/pan39/Desktop/fpga/uart/uart.vhd    ;         ;
+; uart_tx.vhd                      ; yes             ; User VHDL File  ; C:/Users/pan39/Desktop/fpga/uart/uart_tx.vhd ;         ;
+; uart_rx.vhd                      ; yes             ; User VHDL File  ; C:/Users/pan39/Desktop/fpga/uart/uart_rx.vhd ;         ;
++----------------------------------+-----------------+-----------------+----------------------------------------------+---------+
 
 
-+-------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                 ;
-+---------------------------------------------+---------------+
-; Resource                                    ; Usage         ;
-+---------------------------------------------+---------------+
-; Estimated Total logic elements              ; 175           ;
-;                                             ;               ;
-; Total combinational functions               ; 175           ;
-; Logic element usage by number of LUT inputs ;               ;
-;     -- 4 input functions                    ; 84            ;
-;     -- 3 input functions                    ; 2             ;
-;     -- <=2 input functions                  ; 89            ;
-;                                             ;               ;
-; Logic elements by mode                      ;               ;
-;     -- normal mode                          ; 96            ;
-;     -- arithmetic mode                      ; 79            ;
-;                                             ;               ;
-; Total registers                             ; 90            ;
-;     -- Dedicated logic registers            ; 90            ;
-;     -- I/O registers                        ; 0             ;
-;                                             ;               ;
-; I/O pins                                    ; 4             ;
-;                                             ;               ;
-; Embedded Multiplier 9-bit elements          ; 0             ;
-;                                             ;               ;
-; Maximum fan-out node                        ; CLOckIn~input ;
-; Maximum fan-out                             ; 52            ;
-; Total fan-out                               ; 738           ;
-; Average fan-out                             ; 2.70          ;
-+---------------------------------------------+---------------+
++-----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary               ;
++---------------------------------------------+-------------+
+; Resource                                    ; Usage       ;
++---------------------------------------------+-------------+
+; Estimated Total logic elements              ; 277         ;
+;                                             ;             ;
+; Total combinational functions               ; 272         ;
+; Logic element usage by number of LUT inputs ;             ;
+;     -- 4 input functions                    ; 65          ;
+;     -- 3 input functions                    ; 81          ;
+;     -- <=2 input functions                  ; 126         ;
+;                                             ;             ;
+; Logic elements by mode                      ;             ;
+;     -- normal mode                          ; 163         ;
+;     -- arithmetic mode                      ; 109         ;
+;                                             ;             ;
+; Total registers                             ; 115         ;
+;     -- Dedicated logic registers            ; 115         ;
+;     -- I/O registers                        ; 0           ;
+;                                             ;             ;
+; I/O pins                                    ; 12          ;
+;                                             ;             ;
+; Embedded Multiplier 9-bit elements          ; 0           ;
+;                                             ;             ;
+; Maximum fan-out node                        ; RESet~input ;
+; Maximum fan-out                             ; 75          ;
+; Total fan-out                               ; 1134        ;
+; Average fan-out                             ; 2.76        ;
++---------------------------------------------+-------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                      ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
-; |UART                      ; 175 (97)            ; 90 (38)                   ; 0           ; 0            ; 0       ; 0         ; 4    ; 0            ; |UART               ; UART        ; work         ;
-;    |fd:f1|                 ; 78 (78)             ; 52 (52)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |UART|fd:f1         ; fd          ; work         ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                         ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------+-------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name    ; Entity Name ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------+-------------+--------------+
+; |UART                      ; 272 (0)             ; 115 (0)                   ; 0           ; 0            ; 0       ; 0         ; 12   ; 0            ; |UART                  ; UART        ; work         ;
+;    |UART_rx:r1|            ; 141 (101)           ; 77 (51)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |UART|UART_rx:r1       ; UART_rx     ; work         ;
+;       |fd:f1|              ; 40 (40)             ; 26 (26)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |UART|UART_rx:r1|fd:f1 ; fd          ; work         ;
+;    |UART_tx:t1|            ; 131 (98)            ; 38 (37)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |UART|UART_tx:t1       ; UART_tx     ; work         ;
+;       |fd:f1|              ; 33 (33)             ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |UART|UART_tx:t1|fd:f1 ; fd          ; work         ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
 Encoding Type:  One-Hot
-+----------------------------------------------------------------+
-; State Machine - |UART|State                                    ;
-+-------------+-----------+-------------+-----------+------------+
-; Name        ; State.TXE ; State.TXING ; State.TXR ; State.IDLE ;
-+-------------+-----------+-------------+-----------+------------+
-; State.IDLE  ; 0         ; 0           ; 0         ; 0          ;
-; State.TXR   ; 0         ; 0           ; 1         ; 1          ;
-; State.TXING ; 0         ; 1           ; 0         ; 1          ;
-; State.TXE   ; 1         ; 0           ; 0         ; 1          ;
-+-------------+-----------+-------------+-----------+------------+
++--------------------------------------------------------------------------+
+; State Machine - |UART|UART_tx:t1|TXState                                 ;
++---------------+-------------+---------------+-------------+--------------+
+; Name          ; TXState.TXE ; TXState.TXING ; TXState.TXR ; TXState.IDLE ;
++---------------+-------------+---------------+-------------+--------------+
+; TXState.IDLE  ; 0           ; 0             ; 0           ; 0            ;
+; TXState.TXR   ; 0           ; 0             ; 1           ; 1            ;
+; TXState.TXING ; 0           ; 1             ; 0           ; 1            ;
+; TXState.TXE   ; 1           ; 0             ; 0           ; 1            ;
++---------------+-------------+---------------+-------------+--------------+
+
+
+Encoding Type:  One-Hot
++--------------------------------------------------------------------------+
+; State Machine - |UART|UART_rx:r1|RXState                                 ;
++---------------+-------------+---------------+-------------+--------------+
+; Name          ; RXState.RXE ; RXState.RXING ; RXState.RXR ; RXState.IDLE ;
++---------------+-------------+---------------+-------------+--------------+
+; RXState.IDLE  ; 0           ; 0             ; 0           ; 0            ;
+; RXState.RXR   ; 0           ; 0             ; 1           ; 1            ;
+; RXState.RXING ; 0           ; 1             ; 0           ; 1            ;
+; RXState.RXE   ; 1           ; 0             ; 0           ; 1            ;
++---------------+-------------+---------------+-------------+--------------+
+
+
++-----------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                          ;
++----------------------------------------+------------------------------------+
+; Register name                          ; Reason for Removal                 ;
++----------------------------------------+------------------------------------+
+; UART_tx:t1|fd:f1|i[24]                 ; Merged with UART_rx:r1|fd:f1|i[24] ;
+; UART_tx:t1|fd:f1|i[23]                 ; Merged with UART_rx:r1|fd:f1|i[23] ;
+; UART_tx:t1|fd:f1|i[22]                 ; Merged with UART_rx:r1|fd:f1|i[22] ;
+; UART_tx:t1|fd:f1|i[21]                 ; Merged with UART_rx:r1|fd:f1|i[21] ;
+; UART_tx:t1|fd:f1|i[20]                 ; Merged with UART_rx:r1|fd:f1|i[20] ;
+; UART_tx:t1|fd:f1|i[19]                 ; Merged with UART_rx:r1|fd:f1|i[19] ;
+; UART_tx:t1|fd:f1|i[18]                 ; Merged with UART_rx:r1|fd:f1|i[18] ;
+; UART_tx:t1|fd:f1|i[17]                 ; Merged with UART_rx:r1|fd:f1|i[17] ;
+; UART_tx:t1|fd:f1|i[16]                 ; Merged with UART_rx:r1|fd:f1|i[16] ;
+; UART_tx:t1|fd:f1|i[15]                 ; Merged with UART_rx:r1|fd:f1|i[15] ;
+; UART_tx:t1|fd:f1|i[14]                 ; Merged with UART_rx:r1|fd:f1|i[14] ;
+; UART_tx:t1|fd:f1|i[13]                 ; Merged with UART_rx:r1|fd:f1|i[13] ;
+; UART_tx:t1|fd:f1|i[12]                 ; Merged with UART_rx:r1|fd:f1|i[12] ;
+; UART_tx:t1|fd:f1|i[11]                 ; Merged with UART_rx:r1|fd:f1|i[11] ;
+; UART_tx:t1|fd:f1|i[10]                 ; Merged with UART_rx:r1|fd:f1|i[10] ;
+; UART_tx:t1|fd:f1|i[9]                  ; Merged with UART_rx:r1|fd:f1|i[9]  ;
+; UART_tx:t1|fd:f1|i[8]                  ; Merged with UART_rx:r1|fd:f1|i[8]  ;
+; UART_tx:t1|fd:f1|i[7]                  ; Merged with UART_rx:r1|fd:f1|i[7]  ;
+; UART_tx:t1|fd:f1|i[6]                  ; Merged with UART_rx:r1|fd:f1|i[6]  ;
+; UART_tx:t1|fd:f1|i[5]                  ; Merged with UART_rx:r1|fd:f1|i[5]  ;
+; UART_tx:t1|fd:f1|i[4]                  ; Merged with UART_rx:r1|fd:f1|i[4]  ;
+; UART_tx:t1|fd:f1|i[3]                  ; Merged with UART_rx:r1|fd:f1|i[3]  ;
+; UART_tx:t1|fd:f1|i[2]                  ; Merged with UART_rx:r1|fd:f1|i[2]  ;
+; UART_tx:t1|fd:f1|i[1]                  ; Merged with UART_rx:r1|fd:f1|i[1]  ;
+; UART_tx:t1|fd:f1|i[0]                  ; Merged with UART_rx:r1|fd:f1|i[0]  ;
+; UART_rx:r1|RXState.RXR                 ; Lost fanout                        ;
+; Total Number of Removed Registers = 26 ;                                    ;
++----------------------------------------+------------------------------------+
 
 
 +------------------------------------------------------+
@@ -237,12 +297,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 90    ;
+; Total registers                              ; 115   ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 36    ;
+; Number of registers using Asynchronous Clear ; 71    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Clock Enable       ; 72    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -252,41 +312,77 @@ Encoding Type:  One-Hot
 +-----------------------------------------+---------+
 ; Inverted Register                       ; Fan out ;
 +-----------------------------------------+---------+
-; TX~reg0                                 ; 3       ;
-; n[2]                                    ; 4       ;
-; n[1]                                    ; 4       ;
-; n[0]                                    ; 4       ;
-; ReSend                                  ; 3       ;
-; n[3]                                    ; 3       ;
-; n[4]                                    ; 3       ;
-; n[5]                                    ; 3       ;
-; n[6]                                    ; 3       ;
-; n[7]                                    ; 3       ;
-; n[8]                                    ; 3       ;
-; n[9]                                    ; 3       ;
-; n[10]                                   ; 3       ;
-; n[11]                                   ; 3       ;
-; n[12]                                   ; 3       ;
-; n[13]                                   ; 3       ;
-; n[14]                                   ; 3       ;
-; n[28]                                   ; 3       ;
-; n[27]                                   ; 3       ;
-; n[26]                                   ; 3       ;
-; n[25]                                   ; 3       ;
-; n[24]                                   ; 3       ;
-; n[23]                                   ; 3       ;
-; n[22]                                   ; 3       ;
-; n[21]                                   ; 3       ;
-; n[20]                                   ; 3       ;
-; n[19]                                   ; 3       ;
-; n[18]                                   ; 3       ;
-; n[17]                                   ; 3       ;
-; n[16]                                   ; 3       ;
-; n[15]                                   ; 3       ;
-; n[29]                                   ; 3       ;
-; n[30]                                   ; 3       ;
-; n[31]                                   ; 3       ;
-; Total number of inverted registers = 34 ;         ;
+; UART_tx:t1|TX                           ; 2       ;
+; UART_tx:t1|n[1]                         ; 5       ;
+; UART_tx:t1|n[0]                         ; 5       ;
+; UART_tx:t1|n[2]                         ; 3       ;
+; UART_tx:t1|fd:f1|temp                   ; 38      ;
+; UART_tx:t1|n[31]                        ; 2       ;
+; UART_tx:t1|n[30]                        ; 2       ;
+; UART_tx:t1|n[29]                        ; 2       ;
+; UART_tx:t1|n[28]                        ; 2       ;
+; UART_tx:t1|n[27]                        ; 2       ;
+; UART_tx:t1|n[26]                        ; 2       ;
+; UART_tx:t1|n[25]                        ; 2       ;
+; UART_tx:t1|n[24]                        ; 2       ;
+; UART_tx:t1|n[23]                        ; 2       ;
+; UART_tx:t1|n[22]                        ; 2       ;
+; UART_tx:t1|n[21]                        ; 2       ;
+; UART_tx:t1|n[20]                        ; 2       ;
+; UART_tx:t1|n[19]                        ; 2       ;
+; UART_tx:t1|n[18]                        ; 2       ;
+; UART_tx:t1|n[17]                        ; 2       ;
+; UART_tx:t1|n[16]                        ; 2       ;
+; UART_tx:t1|n[12]                        ; 2       ;
+; UART_tx:t1|n[13]                        ; 2       ;
+; UART_tx:t1|n[14]                        ; 2       ;
+; UART_tx:t1|n[15]                        ; 2       ;
+; UART_tx:t1|n[8]                         ; 2       ;
+; UART_tx:t1|n[9]                         ; 2       ;
+; UART_tx:t1|n[10]                        ; 2       ;
+; UART_tx:t1|n[11]                        ; 2       ;
+; UART_tx:t1|n[4]                         ; 2       ;
+; UART_tx:t1|n[5]                         ; 2       ;
+; UART_tx:t1|n[6]                         ; 2       ;
+; UART_tx:t1|n[7]                         ; 2       ;
+; UART_tx:t1|n[3]                         ; 2       ;
+; UART_rx:r1|fd:f1|temp                   ; 52      ;
+; UART_rx:r1|charnR[7]                    ; 2       ;
+; UART_rx:r1|charnR[3]                    ; 2       ;
+; UART_rx:r1|charnR[0]                    ; 2       ;
+; UART_rx:r1|n[0]                         ; 9       ;
+; UART_rx:r1|n[1]                         ; 9       ;
+; UART_rx:r1|n[2]                         ; 9       ;
+; UART_rx:r1|n[31]                        ; 1       ;
+; UART_rx:r1|n[30]                        ; 1       ;
+; UART_rx:r1|n[29]                        ; 1       ;
+; UART_rx:r1|n[28]                        ; 1       ;
+; UART_rx:r1|n[27]                        ; 1       ;
+; UART_rx:r1|n[26]                        ; 1       ;
+; UART_rx:r1|n[25]                        ; 1       ;
+; UART_rx:r1|n[24]                        ; 1       ;
+; UART_rx:r1|n[23]                        ; 1       ;
+; UART_rx:r1|n[22]                        ; 1       ;
+; UART_rx:r1|n[21]                        ; 1       ;
+; UART_rx:r1|n[20]                        ; 1       ;
+; UART_rx:r1|n[19]                        ; 1       ;
+; UART_rx:r1|n[18]                        ; 1       ;
+; UART_rx:r1|n[17]                        ; 1       ;
+; UART_rx:r1|n[16]                        ; 1       ;
+; UART_rx:r1|n[15]                        ; 1       ;
+; UART_rx:r1|n[14]                        ; 1       ;
+; UART_rx:r1|n[13]                        ; 1       ;
+; UART_rx:r1|n[12]                        ; 1       ;
+; UART_rx:r1|n[11]                        ; 1       ;
+; UART_rx:r1|n[10]                        ; 1       ;
+; UART_rx:r1|n[9]                         ; 1       ;
+; UART_rx:r1|n[8]                         ; 1       ;
+; UART_rx:r1|n[7]                         ; 1       ;
+; UART_rx:r1|n[6]                         ; 1       ;
+; UART_rx:r1|n[5]                         ; 1       ;
+; UART_rx:r1|n[4]                         ; 1       ;
+; UART_rx:r1|n[3]                         ; 1       ;
+; Total number of inverted registers = 70 ;         ;
 +-----------------------------------------+---------+
 
 
@@ -295,8 +391,57 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |UART|Selector2            ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; Yes        ; |UART|UART_tx:t1|n[25]     ;
+; 6:1                ; 32 bits   ; 128 LEs       ; 64 LEs               ; 64 LEs                 ; Yes        ; |UART|UART_rx:r1|n[17]     ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |UART|UART_tx:t1|Selector2 ;
+; 7:1                ; 4 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; No         ; |UART|UART_rx:r1|Selector3 ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "fd:f1"                                                                                ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; fdout  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; fdout1 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "UART_tx:t1|fd:f1"                                                                     ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; fdout1 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "UART_tx:t1"                                                                          ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                             ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; text1 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "UART_rx:r1|fd:f1"                                                                     ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; fdout1 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "UART_rx:r1"                                                                          ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                             ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; text1 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------+
@@ -304,21 +449,25 @@ Encoding Type:  One-Hot
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 4                           ;
-; cycloneiii_ff         ; 90                          ;
-;     CLR               ; 36                          ;
-;     plain             ; 54                          ;
-; cycloneiii_lcell_comb ; 176                         ;
-;     arith             ; 79                          ;
-;         2 data inputs ; 79                          ;
-;     normal            ; 97                          ;
-;         1 data inputs ; 5                           ;
-;         2 data inputs ; 6                           ;
-;         3 data inputs ; 2                           ;
-;         4 data inputs ; 84                          ;
+; boundary_port         ; 12                          ;
+; cycloneiii_ff         ; 115                         ;
+;     CLR               ; 7                           ;
+;     ENA               ; 8                           ;
+;     ENA CLR           ; 64                          ;
+;     plain             ; 36                          ;
+; cycloneiii_lcell_comb ; 274                         ;
+;     arith             ; 109                         ;
+;         2 data inputs ; 108                         ;
+;         3 data inputs ; 1                           ;
+;     normal            ; 165                         ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 8                           ;
+;         2 data inputs ; 11                          ;
+;         3 data inputs ; 80                          ;
+;         4 data inputs ; 65                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 9.20                        ;
-; Average LUT depth     ; 5.75                        ;
+; Max LUT depth         ; 9.80                        ;
+; Average LUT depth     ; 6.26                        ;
 +-----------------------+-----------------------------+
 
 
@@ -337,7 +486,7 @@ Encoding Type:  One-Hot
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-    Info: Processing started: Mon Feb 10 22:25:36 2020
+    Info: Processing started: Tue Feb 11 16:30:21 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off uart -c uart
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -345,28 +494,50 @@ Info (12021): Found 2 design units, including 1 entities, in source file fd.vhd
     Info (12022): Found design unit 1: fd-flow File: C:/Users/pan39/Desktop/fpga/uart/fd.vhd Line: 13
     Info (12023): Found entity 1: fd File: C:/Users/pan39/Desktop/fpga/uart/fd.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file uart.vhd
-    Info (12022): Found design unit 1: uart-RTL File: C:/Users/pan39/Desktop/fpga/uart/uart.vhd Line: 15
+    Info (12022): Found design unit 1: uart-RTL File: C:/Users/pan39/Desktop/fpga/uart/uart.vhd Line: 16
     Info (12023): Found entity 1: UART File: C:/Users/pan39/Desktop/fpga/uart/uart.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file uart_tx.vhd
+    Info (12022): Found design unit 1: UART_tx-RTL File: C:/Users/pan39/Desktop/fpga/uart/uart_tx.vhd Line: 16
+    Info (12023): Found entity 1: UART_tx File: C:/Users/pan39/Desktop/fpga/uart/uart_tx.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file uart_rx.vhd
+    Info (12022): Found design unit 1: uart_rx-RTL File: C:/Users/pan39/Desktop/fpga/uart/uart_rx.vhd Line: 16
+    Info (12023): Found entity 1: UART_rx File: C:/Users/pan39/Desktop/fpga/uart/uart_rx.vhd Line: 5
 Info (12127): Elaborating entity "uart" for the top level hierarchy
-Warning (10540): VHDL Signal Declaration warning at uart.vhd(16): used explicit default value for signal "charn" because signal was never assigned a value File: C:/Users/pan39/Desktop/fpga/uart/uart.vhd Line: 16
-Warning (10492): VHDL Process Statement warning at uart.vhd(36): signal "RESet" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/pan39/Desktop/fpga/uart/uart.vhd Line: 36
-Warning (10492): VHDL Process Statement warning at uart.vhd(36): signal "ReSend" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/pan39/Desktop/fpga/uart/uart.vhd Line: 36
-Info (12128): Elaborating entity "fd" for hierarchy "fd:f1" File: C:/Users/pan39/Desktop/fpga/uart/uart.vhd Line: 31
-Info (13000): Registers with preset signals will power-up high File: C:/Users/pan39/Desktop/fpga/uart/uart.vhd Line: 36
+Warning (10036): Verilog HDL or VHDL warning at uart.vhd(18): object "temp" assigned a value but never read File: C:/Users/pan39/Desktop/fpga/uart/uart.vhd Line: 18
+Warning (10036): Verilog HDL or VHDL warning at uart.vhd(19): object "temp1" assigned a value but never read File: C:/Users/pan39/Desktop/fpga/uart/uart.vhd Line: 19
+Warning (10034): Output port "text1" at uart.vhd(13) has no driver File: C:/Users/pan39/Desktop/fpga/uart/uart.vhd Line: 13
+Info (12128): Elaborating entity "UART_rx" for hierarchy "UART_rx:r1" File: C:/Users/pan39/Desktop/fpga/uart/uart.vhd Line: 52
+Warning (10036): Verilog HDL or VHDL warning at uart_rx.vhd(19): object "temp1" assigned a value but never read File: C:/Users/pan39/Desktop/fpga/uart/uart_rx.vhd Line: 19
+Warning (10492): VHDL Process Statement warning at uart_rx.vhd(36): signal "RESet" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/pan39/Desktop/fpga/uart/uart_rx.vhd Line: 36
+Info (12128): Elaborating entity "fd" for hierarchy "UART_rx:r1|fd:f1" File: C:/Users/pan39/Desktop/fpga/uart/uart_rx.vhd Line: 31
+Info (12128): Elaborating entity "UART_tx" for hierarchy "UART_tx:t1" File: C:/Users/pan39/Desktop/fpga/uart/uart.vhd Line: 53
+Warning (10492): VHDL Process Statement warning at uart_tx.vhd(38): signal "RESet" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/pan39/Desktop/fpga/uart/uart_tx.vhd Line: 38
+Info (13000): Registers with preset signals will power-up high File: C:/Users/pan39/Desktop/fpga/uart/uart_tx.vhd Line: 38
 Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "text1[7]" is stuck at GND File: C:/Users/pan39/Desktop/fpga/uart/uart.vhd Line: 13
+    Warning (13410): Pin "text1[6]" is stuck at GND File: C:/Users/pan39/Desktop/fpga/uart/uart.vhd Line: 13
+    Warning (13410): Pin "text1[5]" is stuck at GND File: C:/Users/pan39/Desktop/fpga/uart/uart.vhd Line: 13
+    Warning (13410): Pin "text1[4]" is stuck at GND File: C:/Users/pan39/Desktop/fpga/uart/uart.vhd Line: 13
+    Warning (13410): Pin "text1[3]" is stuck at GND File: C:/Users/pan39/Desktop/fpga/uart/uart.vhd Line: 13
+    Warning (13410): Pin "text1[2]" is stuck at GND File: C:/Users/pan39/Desktop/fpga/uart/uart.vhd Line: 13
+    Warning (13410): Pin "text1[1]" is stuck at GND File: C:/Users/pan39/Desktop/fpga/uart/uart.vhd Line: 13
+    Warning (13410): Pin "text1[0]" is stuck at GND File: C:/Users/pan39/Desktop/fpga/uart/uart.vhd Line: 13
 Info (286030): Timing-Driven Synthesis is running
 Critical Warning (18061): Ignored Power-Up Level option on the following registers
-    Critical Warning (18010): Register n[0] will power up to High File: C:/Users/pan39/Desktop/fpga/uart/uart.vhd Line: 36
+    Critical Warning (18010): Register UART_tx:t1|n[0] will power up to High File: C:/Users/pan39/Desktop/fpga/uart/uart_tx.vhd Line: 38
+    Critical Warning (18010): Register UART_rx:r1|n[0] will power up to High File: C:/Users/pan39/Desktop/fpga/uart/uart_rx.vhd Line: 36
+Info (17049): 1 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 219 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 2 input pins
-    Info (21059): Implemented 2 output pins
-    Info (21061): Implemented 215 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 6 warnings
-    Info: Peak virtual memory: 4799 megabytes
-    Info: Processing ended: Mon Feb 10 22:25:55 2020
-    Info: Elapsed time: 00:00:19
-    Info: Total CPU time (on all processors): 00:00:33
+Info (21057): Implemented 308 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 3 input pins
+    Info (21059): Implemented 9 output pins
+    Info (21061): Implemented 296 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 19 warnings
+    Info: Peak virtual memory: 4796 megabytes
+    Info: Processing ended: Tue Feb 11 16:30:37 2020
+    Info: Elapsed time: 00:00:16
+    Info: Total CPU time (on all processors): 00:00:29
 
 

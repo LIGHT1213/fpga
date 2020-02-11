@@ -1,7 +1,14 @@
 
-State Machine - |UART|State
-Name State.TXE State.TXING State.TXR State.IDLE 
-State.IDLE 0 0 0 0 
-State.TXR 0 0 1 1 
-State.TXING 0 1 0 1 
-State.TXE 1 0 0 1 
+State Machine - |UART|UART_tx:t1|TXState
+Name TXState.TXE TXState.TXING TXState.TXR TXState.IDLE 
+TXState.IDLE 0 0 0 0 
+TXState.TXR 0 0 1 1 
+TXState.TXING 0 1 0 1 
+TXState.TXE 1 0 0 1 
+
+State Machine - |UART|UART_rx:r1|RXState
+Name RXState.RXE RXState.RXING RXState.RXR RXState.IDLE 
+RXState.IDLE 0 0 0 0 
+RXState.RXR 0 0 1 1 
+RXState.RXING 0 1 0 1 
+RXState.RXE 1 0 0 1 

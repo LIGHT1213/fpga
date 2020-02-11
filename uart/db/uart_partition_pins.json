@@ -8,11 +8,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "text1",
+					"name" : "RESet",
 					"strict" : false
 				},
 				{
-					"name" : "RESet",
+					"name" : "RX",
 					"strict" : false
 				},
 				{

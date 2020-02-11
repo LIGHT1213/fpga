@@ -3,135 +3,111 @@ TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1200mV 85C Model Setup 'CLOckIn'
-Slack : -6.012
-TNS   : -132.888
+Slack : -6.692
+TNS   : -85.719
 
-Type  : Slow 1200mV 85C Model Setup 'fd:f1|temp'
-Slack : -5.788
-TNS   : -124.922
+Type  : Slow 1200mV 85C Model Setup 'UART_rx:r1|fd:f1|temp'
+Slack : -5.423
+TNS   : -152.195
 
-Type  : Slow 1200mV 85C Model Setup 'fd:f1|temp1'
-Slack : 0.114
+Type  : Slow 1200mV 85C Model Setup 'UART_tx:t1|fd:f1|temp'
+Slack : -5.199
+TNS   : -128.725
+
+Type  : Slow 1200mV 85C Model Hold 'UART_rx:r1|fd:f1|temp'
+Slack : 0.435
 TNS   : 0.000
 
-Type  : Slow 1200mV 85C Model Hold 'fd:f1|temp'
-Slack : 0.453
-TNS   : 0.000
-
-Type  : Slow 1200mV 85C Model Hold 'fd:f1|temp1'
-Slack : 0.497
+Type  : Slow 1200mV 85C Model Hold 'UART_tx:t1|fd:f1|temp'
+Slack : 0.435
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'CLOckIn'
-Slack : 0.734
-TNS   : 0.000
-
-Type  : Slow 1200mV 85C Model Recovery 'fd:f1|temp'
-Slack : -1.238
-TNS   : -38.547
-
-Type  : Slow 1200mV 85C Model Removal 'fd:f1|temp'
-Slack : 1.100
+Slack : 0.505
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'CLOckIn'
 Slack : -3.000
-TNS   : -80.324
+TNS   : -43.149
 
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'fd:f1|temp'
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'UART_rx:r1|fd:f1|temp'
+Slack : -1.487
+TNS   : -75.837
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'UART_tx:t1|fd:f1|temp'
 Slack : -1.487
 TNS   : -55.019
 
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'fd:f1|temp1'
-Slack : -1.487
-TNS   : -1.487
-
 Type  : Slow 1200mV 0C Model Setup 'CLOckIn'
-Slack : -5.469
-TNS   : -114.502
+Slack : -6.181
+TNS   : -76.127
 
-Type  : Slow 1200mV 0C Model Setup 'fd:f1|temp'
-Slack : -5.129
-TNS   : -110.086
+Type  : Slow 1200mV 0C Model Setup 'UART_rx:r1|fd:f1|temp'
+Slack : -4.847
+TNS   : -134.255
 
-Type  : Slow 1200mV 0C Model Setup 'fd:f1|temp1'
-Slack : 0.208
+Type  : Slow 1200mV 0C Model Setup 'UART_tx:t1|fd:f1|temp'
+Slack : -4.651
+TNS   : -112.924
+
+Type  : Slow 1200mV 0C Model Hold 'UART_rx:r1|fd:f1|temp'
+Slack : 0.387
 TNS   : 0.000
 
-Type  : Slow 1200mV 0C Model Hold 'fd:f1|temp'
-Slack : 0.401
-TNS   : 0.000
-
-Type  : Slow 1200mV 0C Model Hold 'fd:f1|temp1'
-Slack : 0.445
+Type  : Slow 1200mV 0C Model Hold 'UART_tx:t1|fd:f1|temp'
+Slack : 0.388
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'CLOckIn'
-Slack : 0.681
-TNS   : 0.000
-
-Type  : Slow 1200mV 0C Model Recovery 'fd:f1|temp'
-Slack : -1.192
-TNS   : -36.512
-
-Type  : Slow 1200mV 0C Model Removal 'fd:f1|temp'
-Slack : 1.096
+Slack : 0.466
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'CLOckIn'
 Slack : -3.000
-TNS   : -80.324
+TNS   : -43.149
 
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'fd:f1|temp'
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'UART_rx:r1|fd:f1|temp'
+Slack : -1.487
+TNS   : -75.837
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'UART_tx:t1|fd:f1|temp'
 Slack : -1.487
 TNS   : -55.019
 
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'fd:f1|temp1'
-Slack : -1.487
-TNS   : -1.487
-
 Type  : Fast 1200mV 0C Model Setup 'CLOckIn'
-Slack : -2.012
-TNS   : -30.193
+Slack : -2.281
+TNS   : -21.848
 
-Type  : Fast 1200mV 0C Model Setup 'fd:f1|temp'
-Slack : -1.924
-TNS   : -33.727
+Type  : Fast 1200mV 0C Model Setup 'UART_rx:r1|fd:f1|temp'
+Slack : -1.730
+TNS   : -38.443
 
-Type  : Fast 1200mV 0C Model Setup 'fd:f1|temp1'
-Slack : 0.626
+Type  : Fast 1200mV 0C Model Setup 'UART_tx:t1|fd:f1|temp'
+Slack : -1.651
+TNS   : -34.991
+
+Type  : Fast 1200mV 0C Model Hold 'UART_rx:r1|fd:f1|temp'
+Slack : 0.176
 TNS   : 0.000
 
-Type  : Fast 1200mV 0C Model Hold 'fd:f1|temp'
-Slack : 0.186
-TNS   : 0.000
-
-Type  : Fast 1200mV 0C Model Hold 'fd:f1|temp1'
-Slack : 0.208
+Type  : Fast 1200mV 0C Model Hold 'UART_tx:t1|fd:f1|temp'
+Slack : 0.176
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'CLOckIn'
-Slack : 0.290
-TNS   : 0.000
-
-Type  : Fast 1200mV 0C Model Recovery 'fd:f1|temp'
-Slack : 0.043
-TNS   : 0.000
-
-Type  : Fast 1200mV 0C Model Removal 'fd:f1|temp'
-Slack : 0.414
+Slack : 0.204
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'CLOckIn'
 Slack : -3.000
-TNS   : -58.316
+TNS   : -31.728
 
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'fd:f1|temp'
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'UART_rx:r1|fd:f1|temp'
+Slack : -1.000
+TNS   : -51.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'UART_tx:t1|fd:f1|temp'
 Slack : -1.000
 TNS   : -37.000
-
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'fd:f1|temp1'
-Slack : -1.000
-TNS   : -1.000
 
 ------------------------------------------------------------
