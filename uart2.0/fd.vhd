@@ -24,20 +24,20 @@ begin
 if(ClockIn'event and ClockIn='1') then
 
 i:=i+1;
-if(i=217) then
+if(i=400) then  --217
 temp<= not temp;
 i:=0;
 end if;
 
 j:=j+1;
-if(j=5208) then
+if(j=9600) then  --5208
 temp1<= not temp1;
 j:=0;
 end if;
 
 
 k:=k+1;
-if(k=13) then
+if(k=25) then   --13
 temp2<= not temp2;
 k:=0;
 end if;
