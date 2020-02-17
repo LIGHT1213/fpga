@@ -1,0 +1,8 @@
+
+State Machine - |UARTrecShowChar|uart_rx:r1|state
+Name state.r_stop state.r_sample state.r_wait state.r_center state.r_start 
+state.r_start 0 0 0 0 0 
+state.r_center 0 0 0 1 1 
+state.r_wait 0 0 1 0 1 
+state.r_sample 0 1 0 0 1 
+state.r_stop 1 0 0 0 1 

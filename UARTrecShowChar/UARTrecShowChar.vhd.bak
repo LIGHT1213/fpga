@@ -1,0 +1,13 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_unsigned.all;
+use ieee.std_logic_arith.all;
+entity uart_rx is
+port(
+TESTOUT :OUT STD_Logic_vector(7 DOWNTo 0);
+CLOckIn :IN STD_logic;
+RX :IN STD_logic;
+r_ready:out std_logic;
+RESet:in STD_logic
+);
+END

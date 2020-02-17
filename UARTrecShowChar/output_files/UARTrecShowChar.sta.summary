@@ -1,0 +1,77 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'CLOckIn'
+Slack : -5.745
+TNS   : -59.970
+
+Type  : Slow 1200mV 85C Model Setup 'uart_rx:r1|fd:f1|temp2'
+Slack : -3.119
+TNS   : -109.527
+
+Type  : Slow 1200mV 85C Model Hold 'uart_rx:r1|fd:f1|temp2'
+Slack : 0.455
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'CLOckIn'
+Slack : 0.733
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'CLOckIn'
+Slack : -3.000
+TNS   : -41.662
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'uart_rx:r1|fd:f1|temp2'
+Slack : -1.487
+TNS   : -84.759
+
+Type  : Slow 1200mV 0C Model Setup 'CLOckIn'
+Slack : -5.265
+TNS   : -51.437
+
+Type  : Slow 1200mV 0C Model Setup 'uart_rx:r1|fd:f1|temp2'
+Slack : -2.648
+TNS   : -95.730
+
+Type  : Slow 1200mV 0C Model Hold 'uart_rx:r1|fd:f1|temp2'
+Slack : 0.404
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'CLOckIn'
+Slack : 0.681
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'CLOckIn'
+Slack : -3.000
+TNS   : -41.662
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'uart_rx:r1|fd:f1|temp2'
+Slack : -1.487
+TNS   : -84.759
+
+Type  : Fast 1200mV 0C Model Setup 'CLOckIn'
+Slack : -1.867
+TNS   : -11.738
+
+Type  : Fast 1200mV 0C Model Setup 'uart_rx:r1|fd:f1|temp2'
+Slack : -0.841
+TNS   : -17.144
+
+Type  : Fast 1200mV 0C Model Hold 'uart_rx:r1|fd:f1|temp2'
+Slack : 0.185
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'CLOckIn'
+Slack : 0.290
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'CLOckIn'
+Slack : -3.000
+TNS   : -30.690
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'uart_rx:r1|fd:f1|temp2'
+Slack : -1.000
+TNS   : -57.000
+
+------------------------------------------------------------
